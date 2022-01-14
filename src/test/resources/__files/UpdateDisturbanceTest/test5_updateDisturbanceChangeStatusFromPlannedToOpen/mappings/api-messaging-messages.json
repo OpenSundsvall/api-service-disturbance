@@ -1,0 +1,42 @@
+{
+	"name": "api-messaging",
+	"request": {
+		"urlPath": "/api-messaging/messages",
+		"method": "POST",
+		"bodyPatterns": [
+			{
+				"equalToJson": {
+					"messages": [
+						{
+							"sender": {
+								"emailAddress": "test@sundsvall.se",
+								"emailName": "[TEST] Sundsvall Elnät",
+								"smsName": "[TEST] SvallElnat"
+							},
+							"partyId": "affected-1",
+							"subject": "[TEST] Driftstörning på Streetname 11",
+							"message": "[TEST] Hej! Just nu har vi en driftstörning i elnätet på Streetname 11 som vi felsöker. Hälsningar, Sundsvall Elnät"
+						},
+						{
+							"sender": {
+								"emailAddress": "test@sundsvall.se",
+								"emailName": "[TEST] Sundsvall Elnät",
+								"smsName": "[TEST] SvallElnat"
+							},
+							"partyId": "affected-3",
+							"subject": "[TEST] Driftstörning på Streetname 33",
+							"message": "[TEST] Hej! Just nu har vi en driftstörning i elnätet på Streetname 33 som vi felsöker. Hälsningar, Sundsvall Elnät"
+						}
+					]
+				}
+			}
+		]
+	},
+	"response": {
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"status": 200,
+		"bodyFileName": "UpdateDisturbanceTest/test5_updateDisturbanceChangeStatusFromPlannedToOpen/mocking/api-messaging-messages-response.json"
+	}
+}

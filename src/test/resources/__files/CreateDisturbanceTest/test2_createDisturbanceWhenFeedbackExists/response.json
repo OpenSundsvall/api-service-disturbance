@@ -1,0 +1,24 @@
+{
+	"id": "disturbance-with-feedback-1",
+	"category": "COMMUNICATION",
+	"created": "${json-unit.any-string}",
+	"title": "Disturbance",
+	"description": "Major disturbance in city",
+	"status": "OPEN",
+	"plannedStartDate": "2021-01-14T10:09:00+01:00",
+	"plannedStopDate": "2021-01-14T10:09:00+01:00",
+	"affecteds": [
+		{
+			"partyId": "fbfbd90c-4c47-11ec-81d3-0242ac130003",
+			"reference": "Streetname 111"
+		},
+		{
+			"partyId": "a07986c8-4c48-11ec-81d3-0242ac130003",
+			"reference": "Streetname 222"
+		},
+		{
+			"partyId": "257f6aa0-4c48-11ec-81d3-0242ac130003",
+			"reference": "Streetname 333"
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"name": "api-messaging",
+	"request": {
+		"urlPath": "/api-messaging/messages",
+		"method": "POST",
+		"bodyPatterns": [
+			{
+				"equalToJson": {
+					"messages": [
+						{
+							"sender": {
+								"emailAddress": "test@sundsvall.se",
+								"emailName": "[TEST] ServaNet",
+								"smsName": "[TEST] ServaNet"
+							},
+							"partyId": "fbfbd90c-4c47-11ec-81d3-0242ac130003",
+							"subject": "[TEST] Driftstörning på Streetname 111",
+							"message": "[TEST] Hej! Just nu har vi en driftstörning i fibernätet på Streetname 111 som vi felsöker. Hälsningar, ServaNet"
+						},
+						{
+							"sender": {
+								"emailAddress": "test@sundsvall.se",
+								"emailName": "[TEST] ServaNet",
+								"smsName": "[TEST] ServaNet"
+							},
+							"partyId": "257f6aa0-4c48-11ec-81d3-0242ac130003",
+							"subject": "[TEST] Driftstörning på Streetname 333",
+							"message": "[TEST] Hej! Just nu har vi en driftstörning i fibernätet på Streetname 333 som vi felsöker. Hälsningar, ServaNet"
+						}
+					]
+				}
+			}
+		]
+	},
+	"response": {
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"status": 200,
+		"bodyFileName": "CreateDisturbanceTest/test2_createDisturbanceWhenFeedbackExists/mocking/api-messaging-messages-response.json"
+	}
+}

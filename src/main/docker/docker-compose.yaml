@@ -1,0 +1,13 @@
+version: "3"
+services:
+  disturbance:
+    # TODO add correct name matching nexus repository also add build number parameter as suffix
+    image: 'api-sundsvall-se/disturbance:latest'
+    restart: always
+    build:
+      context: ../../..
+      dockerfile: src/main/docker/Dockerfile.native
+    entrypoint: ["./application", "-Dquarkus.http.host=0.0.0.0"]
+    # TODO check what port to expose
+    ports:
+      - "8080:8080"

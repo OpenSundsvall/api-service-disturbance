@@ -1,0 +1,11 @@
+version: "3"
+services:
+  disturbance:
+    # TODO add correct name matching nexus repository also add build number parameter as suffix
+    image: 'api-sundsvall-se/disturbance:latest'
+    restart: always
+    build:
+      context: ../../..
+      dockerfile: src/main/docker/Dockerfile.jvm
+    ports:
+        - '9096:8080'

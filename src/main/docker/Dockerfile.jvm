@@ -1,0 +1,17 @@
+FROM maven:3.6.3-jdk-11 AS build
+COPY . /code
+WORKDIR /code
+
+# Necessary in order to run on Jenkins. Comment out when running on local machine without access to nexus.
+COPY settings.xml /root/.m2/settings.xml
+
+## Build
+RUN mvn clean package -DskipTests
+
+FROM openjdk:11.0.12
+ENV TZ="Europe/Stockholm"
+
+COPY --from=build /code/target/*runner.jar ./app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+EXPOSE 8080

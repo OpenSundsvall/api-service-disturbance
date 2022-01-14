@@ -1,0 +1,20 @@
+{
+	"affecteds": [
+		{
+			"partyId": "eeca0a46-3b1d-11ec-8d3d-0242ac130003",
+			"reference": "Streetname 11"
+		},
+		{
+			"partyId": "eeca0c8a-3b1d-11ec-8d3d-0242ac130003",
+			"reference": "Streetname 22"
+		},
+		{
+			"partyId": "eeca0d7a-3b1d-11ec-8d3d-0242ac130003",
+			"reference": "Streetname 33"
+		},
+		{
+			"partyId": "aa33aec2-3b1e-11ec-8d3d-0242ac130003",
+			"reference": "Streetname 44"
+		}
+	]
+}

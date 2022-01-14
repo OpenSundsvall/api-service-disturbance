@@ -1,0 +1,21 @@
+{
+	"name": "api-messaging",
+	"request": {
+		"urlPath": "/api-messaging/messages",
+		"method": "POST"
+	},
+	"response": {
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"status": 200,
+		"jsonBody": {
+			"messages": [
+				{
+					"messageId": "3b7a5955-f481-42bd-a2b3-6ef8bd76b105",
+					"sent": true
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,50 @@
+version: "3"
+services:
+  ms-disturbance-sandbox:
+    container_name: ms-disturbance-sandbox
+    # TODO add correct name matching nexus repository also add build number parameter as suffix
+    image: 'api-sundsvall-se/disturbance:sandbox'
+    network_mode: bridge
+    links:
+      - 'ms-disturbance-wiremock-sandbox:wiremock'
+      - 'ms-disturbance-db-sandbox:mariadb'
+    restart: always
+    build:
+      context: ../../..
+      dockerfile: src/main/docker/Dockerfile.jvm
+    ports:
+      - '9095:8080'
+    environment:
+      QUARKUS_PROFILE: 'sandbox'
+      API_MESSAGING_MP_REST_URL: 'http://wiremock:8080/api-messaging'
+      QUARKUS_OIDC_CLIENT_API_MESSAGING_AUTH_SERVER_URL: 'http://wiremock:8080/api-gateway'
+      QUARKUS_OIDC_CLIENT_API_MESSAGING_TOKEN_PATH: '/token'
+      QUARKUS_DATASOURCE_JDBC_URL: 'jdbc:mariadb://mariadb:3306/dev-disturbance'
+      QUARKUS_DATASOURCE_USERNAME: 'dev-user'
+      QUARKUS_DATASOURCE_PASSWORD: 'dev-password'
+      QUARKUS_HIBERNATE_ORM_DATABASE_GENERATION: 'drop-and-create'
+    depends_on:
+      - ms-disturbance-db-sandbox
+      - ms-disturbance-wiremock-sandbox
+
+  ms-disturbance-db-sandbox:
+    container_name: ms-disturbance-db-sandbox
+    image: 'mariadb:10.6.4'
+    network_mode: bridge
+    environment:
+      MARIADB_RANDOM_ROOT_PASSWORD : 'yes'
+      MARIADB_DATABASE: 'dev-disturbance'
+      MARIADB_USER: 'dev-user'
+      MARIADB_PASSWORD: 'dev-password'
+    expose:
+      - '3306'
+
+  ms-disturbance-wiremock-sandbox:
+    container_name: ms-disturbance-wiremock-sandbox
+    image: wiremock/wiremock
+    network_mode: bridge
+    restart: always
+    volumes:
+      - $PWD/src/test/resources/sandbox:/home/wiremock
+    expose:
+      - '8080'

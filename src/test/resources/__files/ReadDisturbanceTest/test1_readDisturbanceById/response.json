@@ -1,0 +1,24 @@
+{
+	"category": "COMMUNICATION",
+	"created": "2021-09-23T09:05:48.198+02:00",
+	"description": "Description",
+	"id": "disturbance-2",
+	"affecteds": [
+		{
+			"partyId": "0d64beb2-3aea-11ec-8d3d-0242ac130003",
+			"reference": "Streetname 11"
+		},
+		{
+			"partyId": "0d64c132-3aea-11ec-8d3d-0242ac130003",
+			"reference": "Streetname 22"
+		},
+		{
+			"partyId": "0d64c42a-3aea-11ec-8d3d-0242ac130003",
+			"reference": "Streetname 33"
+		}
+	],
+	"plannedStartDate": "2021-12-31T11:30:45+01:00",
+	"plannedStopDate": "2022-01-11T11:30:45+01:00",
+	"status": "OPEN",
+	"title": "Title"
+}

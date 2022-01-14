@@ -1,0 +1,15 @@
+{
+	"id": "disturbance-1",
+	"category": "COMMUNICATION",
+	"title": "Disturbance",
+	"description": "Major disturbance in city",
+	"status": "OPEN",
+	"plannedStartDate": "2021-01-14T09:09:00+01:00",
+	"plannedStopDate": "2021-01-14T09:09:00+01:00",
+	"affecteds": [
+		{
+			"partyId": "81471222-5798-11e9-ae24-57fa13b361e1",
+			"reference": "Streetname 123"
+		}
+	]
+}
